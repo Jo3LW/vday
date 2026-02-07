@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You 🤍</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FAFAF8;
+      color: #2E2E2E;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    .container {
+      max-width: 720px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+    }
+
+    button {
+      font-family: 'Inter', sans-serif;
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+      background: transparent;
+      border: 1px solid #2E2E2E;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #E8E2D8;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tulip {
+      font-size: 4rem;
+      margin: 2rem 0;
+      opacity: 0.15;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .petals {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .petal {
+      position: absolute;
+      font-size: 1.5rem;
+      animation: fall 6s linear forwards;
+      opacity: 0.6;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10%) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.6; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Intro -->
+  <section>
+    <div class="container fade">
+      <h1>Hi Resa 李南星,</h1>
+      <p>I made something for you.</p>
+      <button onclick="scrollToSection('memories')">🌷 Continue</button>
+    </div>
+  </section>
+
+  <!-- Memories -->
+  <section id="memories">
+    <div class="container fade">
+      <p>Every time I spend time with you, I feel at ease, and I can enjoy every second with you.</p>
+      <p>You make every moment special.</p>
+      <p>You feel like the calm in the storm that is life.</p>
+      <div class="tulip">🌷</div>
+    </div>
+  </section>
+
+  <!-- Photos -->
+  <section>
+    <div class="container fade">
+      <p>가장 좋아하는 순간들</p>
+      <div class="gallery">
+        <img src="photos/IMG_9075.jpeg" alt="Us together" />
+        <img src="photos/IMG_9080.jpeg" alt="A moment I love" />
+        <img src="photos/IMG_9163.jpeg" alt="You make me smile" />
+        <img src="photos/image.png" alt="You make me smile" />
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tulip Meaning -->
+  <section>
+    <div class="container fade">
+      <h2>Roses are red,</h2>
+      <h2>Violets are blue.</h2>
+      <p>You are good at dodging balls,<br/>but please don’t dodge me too 🤍</p>
+    </div>
+  </section>
+
+  <!-- The Ask -->
+  <section>
+    <div class="container fade">
+      <h1>Will you be my Valentine?</h1>
+      <div class="buttons">
+        <button onclick="celebrate()">Yes 🤍</button>
+        <button onclick="celebrate()">Of course 🤍</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final -->
+  <section>
+    <div class="container fade">
+      <p>February 14</p>
+      <p>
+        <a 
+            href="https://youtu.be/dQw4w9WgXcQ" 
+            target="_blank"
+            style="color:#2E2E2E; text-decoration: underline;"
+        >
+            Just you and me
+        </a>
+        </p>
+    </div>
+  </section>
+
+  <div class="petals" id="petals"></div>
+
+  <script>
+    const fades = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    fades.forEach(el => observer.observe(el));
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function celebrate() {
+      for (let i = 0; i < 20; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        petal.innerText = '🌸';
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDelay = Math.random() * 2 + 's';
+        document.getElementById('petals').appendChild(petal);
+        setTimeout(() => petal.remove(), 7000);
+      }
+    }
+  </script>
+</body>
+</html>
