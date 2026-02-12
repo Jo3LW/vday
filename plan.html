@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Day 🤍</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FAFAF8;
+      color: #2E2E2E;
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    .container {
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline {
+      text-align: left;
+      margin-top: 2rem;
+    }
+
+    .event {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .time {
+      font-weight: 600;
+      min-width: 90px;
+    }
+
+    .desc {
+      line-height: 1.6;
+    }
+
+    .tulip {
+      text-align: center;
+      font-size: 3rem;
+      opacity: 0.2;
+      margin: 3rem 0;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .event {
+        gap: 0.8rem;
+      }
+
+      .time {
+        min-width: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1>Our Valentine’s Day</h1>
+
+      <div class="timeline">
+        <div class="event">
+          <div class="time">08:45</div>
+          <div class="desc">Wake up ☀️</div>
+        </div>
+
+        <div class="event">
+          <div class="time">10:00 – 12:00</div>
+          <div class="desc">Heritage in a Cup ☕</div>
+        </div>
+
+        <div class="event">
+          <div class="time">12:00 – 13:30</div>
+          <div class="desc">Lunch at Chye Seng Huat Hardware 🍽️</div>
+        </div>
+
+        <div class="event">
+          <div class="time">14:00 – 15:00</div>
+          <div class="desc">SG60 – FRAMED<br/>National Gallery 🖼️</div>
+        </div>
+
+        <div class="event">
+          <div class="time">15:30 – 18:30</div>
+          <div class="desc">Sleep in / Home-based activities 🤣</div>
+        </div>
+
+        <div class="event">
+          <div class="time">20:30</div>
+          <div class="desc">Bistecca 🥩</div>
+        </div>
+      </div>
+
+      <div class="tulip">🌷</div>
+
+      <div class="footer">
+        Just you and me.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
