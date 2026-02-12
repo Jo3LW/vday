@@ -5,121 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Day 🤍</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
       background: #FAFAF8;
       color: #2E2E2E;
-      margin: 0;
-      padding: 0;
     }
 
-    .wrapper {
+    .page {
       min-height: 100vh;
+      padding: 3rem 1.5rem 4rem;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 4rem 2rem;
     }
 
     .container {
-      max-width: 600px;
-      text-align: center;
+      width: 100%;
+      max-width: 520px;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
     }
 
     .timeline {
-      text-align: left;
-      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
     }
 
     .event {
-      display: flex;
-      gap: 1.2rem;
-      margin-bottom: 1.8rem;
-      align-items: flex-start;
+      background: #FFFFFF;
+      border-radius: 18px;
+      padding: 1.2rem 1.3rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
     .time {
-      font-weight: 600;
-      min-width: 90px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
     }
 
-    .desc {
-      line-height: 1.6;
+    .title {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .title a {
+      color: #2E2E2E;
+      text-decoration: underline;
+    }
+
+    .note {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.85;
     }
 
     .tulip {
       text-align: center;
       font-size: 3rem;
+      margin: 3rem 0 2rem;
       opacity: 0.2;
-      margin: 3rem 0;
     }
 
     .footer {
-      margin-top: 3rem;
+      text-align: center;
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      .event {
-        gap: 0.8rem;
-      }
-
-      .time {
-        min-width: 80px;
-      }
+      font-size: 1.3rem;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="page">
     <div class="container">
+
       <h1>Our Valentine’s Day</h1>
 
       <div class="timeline">
+
         <div class="event">
           <div class="time">08:45</div>
-          <div class="desc">Wake up ☀️</div>
+          <div class="title">Wake up ☀️</div>
+          <div class="note">Slow morning, no rush.</div>
         </div>
 
         <div class="event">
           <div class="time">10:00 – 12:00</div>
-          <div class="desc">Heritage in a Cup ☕</div>
+          <div class="title">
+            <a href="https://www.sistic.com.sg/events/lite_heritageinacup2025" target="_blank">
+              Heritage In A Cup ☕
+            </a>
+          </div>
+          <div class="note">Coffee, stories, and a little history.</div>
         </div>
 
         <div class="event">
           <div class="time">12:00 – 13:30</div>
-          <div class="desc">Lunch at Chye Seng Huat Hardware 🍽️</div>
+          <div class="title">
+            <a href="https://cshhcoffee.com/" target="_blank">
+              Chye Seng Huat Hardware 🍽️
+            </a>
+          </div>
+          <div class="note">Lunch & good conversations.</div>
         </div>
 
         <div class="event">
           <div class="time">14:00 – 15:00</div>
-          <div class="desc">SG60 – FRAMED<br/>National Gallery 🖼️</div>
+          <div class="title">
+            <a href="https://www.nationalgallery.sg/sg/en/about/corporate-experiences/framed-murder-mystery.html" target="_blank">
+              Framed: A Murder Mystery 🖼️
+            </a>
+          </div>
+          <div class="note">National Gallery Singapore.</div>
         </div>
 
         <div class="event">
           <div class="time">15:30 – 18:30</div>
-          <div class="desc">Sleep in / Home-based activities 🤣</div>
+          <div class="title">Sleep in / Home-based activities 🤣</div>
+          <div class="note">Recharge before the night.</div>
         </div>
 
         <div class="event">
           <div class="time">20:30</div>
-          <div class="desc">Bistecca 🥩</div>
+          <div class="title">
+            <a href="https://bistecca.com.sg/menus/" target="_blank">
+              Bistecca Tuscan Steakhouse 🥩
+            </a>
+          </div>
+          <div class="note">Ending the day properly.</div>
         </div>
+
       </div>
 
       <div class="tulip">🌷</div>
@@ -127,6 +153,7 @@
       <div class="footer">
         Just you and me.
       </div>
+
     </div>
   </div>
 </body>
